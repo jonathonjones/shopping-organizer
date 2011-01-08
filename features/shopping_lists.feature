@@ -18,5 +18,5 @@ Feature: Shopping Lists
 
     Scenario: Creating a shopping list
       When I go to the shopping lists page
-        And I press "Create a new shopping list"
+        And I follow "Create a new shopping list"
       Then I should see "New Shopping List"
