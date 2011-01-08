@@ -1,7 +1,9 @@
 class SessionsController < ApplicationController
 
   def new
-  
+    if Rails.env.test? || Rails.env.development?
+      @users = User.all
+    end
   end
 
   def create
@@ -14,6 +16,13 @@ class SessionsController < ApplicationController
     # Log the authorizing user in.
     self.current_user = @auth.user
 
-    render :text => "Welcome, #{current_user.name}."
+    redirect_to shopping_lists_path
+  end
+
+  if Rails.env.test? || Rails.env.development?
+    def sign_in_as
+      self.current_user = User.find(params[:id])
+      redirect_to shopping_lists_path
+    end
   end
 end

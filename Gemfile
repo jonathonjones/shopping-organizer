@@ -13,6 +13,11 @@ gem 'sqlite3-ruby', :require => 'sqlite3'
 gem 'omniauth'
 
 group :development, :test do
-   gem 'webrat'
-   gem 'cucumber-rails'
+  gem 'cucumber-rails'
+  gem 'capybara'
+  gem 'shoulda'
+  gem 'autotest'  #use with 'bundle exec autotest'
+  gem 'autotest-rails-pure' #to use Test:Unit
+  gem 'factory_girl'
+  gem 'factory_girl_rails'
  end

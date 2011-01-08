@@ -1,8 +1,12 @@
 require 'test_helper'
 
 class ShoppingListsControllerTest < ActionController::TestCase
-  # Replace this with your real tests.
-  test "the truth" do
-    assert true
+
+  context "GET :index" do
+    setup do
+      get :index
+    end
+
+    should render_template :index
   end
 end

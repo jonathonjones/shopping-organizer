@@ -1,5 +1,12 @@
 ShoppingOrganizer::Application.routes.draw do
   match '/auth/:provider/callback', :to => 'sessions#create'
+  match 'sign_in', :to => 'sessions#new'
+
+  if Rails.env.test? || Rails.env.development?
+    match 'sign_in_as', :to => 'sessions#sign_in_as'
+  end
+
+  resources :shopping_lists, :only => [:index]
   
   root :to => "sessions#new"
   # The priority is based upon order of creation:
