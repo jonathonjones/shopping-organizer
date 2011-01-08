@@ -6,7 +6,7 @@ ShoppingOrganizer::Application.routes.draw do
     match 'sign_in_as', :to => 'sessions#sign_in_as'
   end
 
-  resources :shopping_lists, :only => [:index, :show, :new]
+  resources :shopping_lists, :only => [:index, :show, :new, :create]
   
   root :to => "sessions#new"
   # The priority is based upon order of creation:

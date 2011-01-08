@@ -20,3 +20,7 @@ Feature: Shopping Lists
       When I go to the shopping lists page
         And I follow "Create a new shopping list"
       Then I should see "New Shopping List"
+
+      When I fill in "Name" with "Cool List"
+        And I press "Create"
+      Then I should see "Cool List"

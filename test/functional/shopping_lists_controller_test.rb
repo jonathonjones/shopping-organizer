@@ -37,5 +37,15 @@ class ShoppingListsControllerTest < ActionController::TestCase
 
       should render_template 'new'
     end
+
+    context "POST :create" do
+      setup do
+        post :create, :shopping_list => {:user_id => @user.id, :name => "New List"}
+      end
+
+      should "create a list" do
+        assert @user.shopping_lists.find_by_name("New List")
+      end
+    end
   end
 end

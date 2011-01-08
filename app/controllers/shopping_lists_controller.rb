@@ -13,6 +13,14 @@ class ShoppingListsController < ApplicationController
     @list = current_user.shopping_lists.new
   end
 
+  def create
+    @list = current_user.shopping_lists.new(params[:shopping_list])
+    if @list.save
+      flash[:notice] = 'Shopping list was successfully created.'
+    end
+    respond_with @list
+  end
+
   private#####################
 
   def require_user
