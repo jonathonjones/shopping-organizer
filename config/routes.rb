@@ -1,5 +1,7 @@
 ShoppingOrganizer::Application.routes.draw do
   match '/auth/:provider/callback', :to => 'sessions#create'
+  
+  root :to => "sessions#new"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
