@@ -10,4 +10,12 @@ class ActiveSupport::TestCase
   fixtures :all
 
   # Add more helper methods to be used by all tests here...
+
+  protected
+
+  def sign_in_as_normal_user
+    @user = User.first || Factory.create(:user)
+    session[:user_id] = @user.id
+  end
+
 end

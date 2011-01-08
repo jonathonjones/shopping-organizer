@@ -2,11 +2,40 @@ require 'test_helper'
 
 class ShoppingListsControllerTest < ActionController::TestCase
 
-  context "GET :index" do
+  context "Signed in as normal user. " do
     setup do
-      get :index
+      sign_in_as_normal_user
     end
 
-    should render_template :index
+    context "GET :index" do
+      setup do
+        get :index
+      end
+
+      should render_template 'index'
+    end
+    
+    context 'A shopping list exists' do
+      setup do
+        @list = Factory.create(:shopping_list, :user => @user)
+        assert @list
+      end
+      
+      context "GET :show the list" do
+        setup do
+          get :show, :id => @list.id
+        end
+        
+        should render_template 'show'
+      end
+    end
+
+    context "GET :new" do
+      setup do
+        get :new
+      end
+
+      should render_template 'new'
+    end
   end
 end

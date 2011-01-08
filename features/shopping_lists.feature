@@ -12,3 +12,11 @@ Feature: Shopping Lists
       When I go to the shopping lists page
       Then I should see "Shopping Lists"
         And I should see "May 10 List"
+
+      When I follow "May 10 List"
+        Then I should see "May 10 List"
+
+    Scenario: Creating a shopping list
+      When I go to the shopping lists page
+        And I press "Create a new shopping list"
+      Then I should see "New Shopping List"
