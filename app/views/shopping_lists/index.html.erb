@@ -1,7 +1,8 @@
 <h2>Your Shopping Lists</h2>
 
-<%= link_to 'Create a new shopping list', new_shopping_list_path %>
+<p><%= link_to 'Create a new shopping list', new_shopping_list_path %></p>
+
 
 <% @lists.each do |list| %>
-  <%= link_to list.name, list %>
+  <p><%= link_to list.name, list %></p>
 <% end %>
