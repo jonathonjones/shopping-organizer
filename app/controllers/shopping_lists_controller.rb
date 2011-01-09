@@ -21,6 +21,13 @@ class ShoppingListsController < ApplicationController
     respond_with @list
   end
 
+  def consolidate
+    @list = current_user.shopping_lists.find_by_id(params[:id])
+    @list.consolidate
+    flash[:notice] = 'Shopping list has been consolidated.'
+    redirect_to @list
+  end
+
   private#####################
 
   def require_user
