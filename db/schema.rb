@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110108235901) do
+ActiveRecord::Schema.define(:version => 20110109014939) do
 
   create_table "authorizations", :force => true do |t|
     t.string   "provider"
@@ -23,10 +23,10 @@ ActiveRecord::Schema.define(:version => 20110108235901) do
   create_table "list_items", :force => true do |t|
     t.integer  "shopping_list_id"
     t.float    "amount"
-    t.integer  "unit_id"
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "unit"
   end
 
   create_table "shopping_lists", :force => true do |t|

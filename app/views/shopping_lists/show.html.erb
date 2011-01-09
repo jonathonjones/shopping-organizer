@@ -5,7 +5,11 @@
 <table>
   <% @list.list_items.each do |item| %>
     <tr>
-      <td><%= pluralize(item.amount.to_s, item.name.titleize) %></td>
+      <% if item.unit.blank? %>
+        <td><%= pluralize(item.amount.to_s, item.name.titleize) %></td>
+      <% else %>
+        <td><%= pluralize(item.amount.to_s, item.unit) + " #{item.name.titleize}" %></td>
+      <% end %>
       <td><%= link_to 'Edit item', edit_list_item_path(item) %></td>
       <td><%= link_to 'Delete item', item, :confirm => 'Are you sure?', :method => :delete %></td>
     </tr>
