@@ -1,1 +1,13 @@
 <h2><%= @list.name %></h2>
+
+<%= link_to "Add an item to the list", new_list_item_path(:shopping_list_id => @list.id) %>
+
+<table>
+  <% @list.list_items.each do |item| %>
+    <tr>
+      <td><%= pluralize(item.amount.to_s, item.name.titleize) %></td>
+      <td><%= link_to 'Edit item', edit_list_item_path(item) %></td>
+      <td><%= link_to 'Delete item', item, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>

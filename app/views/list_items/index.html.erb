@@ -1,0 +1,27 @@
+<h1>Listing list_items</h1>
+
+<table>
+  <tr>
+    <th>Shopping List</th>
+    <th>Amount</th>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @list_items.each do |list_item| %>
+  <tr>
+    <td><%= link_to list_item.shopping_list.name, list_item.shopping_list %></td>
+    <td><%= list_item.amount %></td>
+    <td><%= list_item.name %></td>
+    <td><%= link_to 'Show', list_item %></td>
+    <td><%= link_to 'Edit', edit_list_item_path(list_item) %></td>
+    <td><%= link_to 'Destroy', list_item, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New List item', new_list_item_path %>

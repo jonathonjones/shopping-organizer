@@ -1,4 +1,6 @@
 ShoppingOrganizer::Application.routes.draw do
+  resources :list_items
+
   match '/auth/:provider/callback', :to => 'sessions#create'
   match 'sign_in', :to => 'sessions#new'
 

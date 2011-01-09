@@ -24,3 +24,14 @@ Feature: Shopping Lists
       When I fill in "Name" with "Cool List"
         And I press "Create"
       Then I should see "Cool List"
+
+    Scenario: Adding an item to a shopping list
+      Given I have created a shopping list with a name of "June 2 List"
+      When I go to the shopping lists page
+        And I follow "June 2 List"
+        And I follow "Add an item to the list"
+        And I fill in "Amount" with "2"
+        And I fill in "Name of Item" with "Apples"
+        And I press "Create"
+      Then I should see "June 2 List"
+        And I should see "2.0 Apples"
