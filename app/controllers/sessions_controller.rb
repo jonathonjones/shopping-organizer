@@ -25,4 +25,10 @@ class SessionsController < ApplicationController
       redirect_to shopping_lists_path
     end
   end
+
+  def destroy
+    self.current_user = nil
+    flash[:notice] = "Logout successful!"
+    redirect_to root_path
+  end
 end

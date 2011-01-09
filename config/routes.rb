@@ -3,6 +3,7 @@ ShoppingOrganizer::Application.routes.draw do
 
   match '/auth/:provider/callback', :to => 'sessions#create'
   match 'sign_in', :to => 'sessions#new'
+  match 'sign_out', :to => 'sessions#destroy'
 
   if Rails.env.test? || Rails.env.development?
     match 'sign_in_as', :to => 'sessions#sign_in_as'
@@ -14,7 +15,7 @@ ShoppingOrganizer::Application.routes.draw do
     end
   end
   
-  root :to => "sessions#new"
+  root :to => "welcome#start"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
