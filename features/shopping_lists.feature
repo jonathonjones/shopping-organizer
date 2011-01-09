@@ -34,4 +34,4 @@ Feature: Shopping Lists
         And I fill in "Name of Item" with "Apples"
         And I press "Create"
       Then I should see "June 2 List"
-        And I should see "2.0 Apples"
+        And I should see "2 Apples"
