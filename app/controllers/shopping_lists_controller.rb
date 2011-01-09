@@ -21,6 +21,12 @@ class ShoppingListsController < ApplicationController
     respond_with @list
   end
 
+  def destroy
+    @list = current_user.shopping_lists.find_by_id(params[:id])
+    @list.destroy
+    respond_with @list, :notice => 'Shopping list has been destroyed.'
+  end
+
   def consolidate
     @list = current_user.shopping_lists.find_by_id(params[:id])
     @list.consolidate

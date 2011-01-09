@@ -2,7 +2,11 @@
 
 <p><%= link_to 'Create a new shopping list', new_shopping_list_path %></p>
 
-
+<table>
 <% @lists.each do |list| %>
-  <p><%= link_to list.name, list %></p>
+  <tr>
+    <td><%= link_to list.name, list %></td>
+    <td><%= link_to "Delete shopping list", list, :method => 'delete', :confirm => true %></td>
+  </tr>
 <% end %>
+</table>
