@@ -1,16 +1,16 @@
 module ListItemsHelper
   def units
-    ["gram",
-     "ounce",
-     "pound",
-     "liter",
-     "bushel",
-     "cup",
-     "fluid_ounce",
-     "gallon",
-     "pint",
-     "quart",
-     "tablespoon",
-     "teaspoon"]
+    [["gram", "gram"],
+     ["ounce", "ounce"],
+     ["pound", "pound"],
+     ["liter", "liter"],
+     ["bushel", "bushel"],
+     ["cup", "cup"],
+     ["fluid_ounce", "fluid_ounce"],
+     ["gallon", "gallon"],
+     ["pint", "pint"],
+     ["quart", "quart"],
+     ["tablespoon", "tablespoon"],
+     ["teaspoon", "teaspoon"]]
   end
 end
