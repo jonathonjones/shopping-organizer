@@ -55,3 +55,23 @@ Feature: Shopping Lists
 
       When I press "Consolidate list"
         Then I should see "11.5 cups of Dry Cat Food"
+
+    Scenario: Consolidating items with different units
+      Given I have created a shopping list with a name of "Claire's List"
+      When I go to the shopping lists page
+        And I follow "Claire's List"
+        And I follow "Add an item to the list"
+        And I fill in "Amount" with "2"
+        And I select "tablespoon" from "Unit"
+        And I fill in "Name of Item" with "wet cat food"
+        And I press "Create"
+        And I follow "Add an item to the list"
+        And I fill in "Amount" with "6"
+        And I select "teaspoon" from "Unit"
+        And I fill in "Name of Item" with "wet cat food"
+        And I press "Create"
+      Then I should see "2 tablespoons of Wet Cat Food"
+        And I should see "6 teaspoons of Wet Cat Food"
+
+      When I press "Consolidate list"
+        Then I should see "4 tablespoons of Wet Cat Food"

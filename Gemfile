@@ -12,6 +12,8 @@ gem 'sqlite3-ruby', :require => 'sqlite3'
 
 gem 'omniauth'
 
+gem 'alchemist'
+
 group :development, :test do
   gem 'cucumber-rails'
   gem 'capybara'
@@ -20,4 +22,4 @@ group :development, :test do
   gem 'autotest-rails-pure' #to use Test:Unit
   gem 'factory_girl'
   gem 'factory_girl_rails'
- end
+end
