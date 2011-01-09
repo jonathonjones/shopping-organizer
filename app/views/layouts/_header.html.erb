@@ -1,0 +1,13 @@
+<div id="header" class="round">
+  <% if signed_in? %>
+    <ul class="navigation round">
+      <% if signed_in? %>
+        Signed in as: <%= current_user.name %>
+        <li><%= link_to "Home", root_path %></li>
+        <li><%= link_to "Shopping Lists", shopping_lists_path %></li>
+        <li><%= link_to "Sign Out", sign_out_path %></li>
+      <% end %>
+    </ul>
+    
+  <% end %>
+</div>
